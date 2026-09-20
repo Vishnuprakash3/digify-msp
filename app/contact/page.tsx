@@ -192,7 +192,7 @@ export default function ContactPage() {
 
                 <textarea
                   placeholder="Tell us about your business..."
-                  rows="6"
+                  rows={6}
                   className="form-input"
                 />
 
