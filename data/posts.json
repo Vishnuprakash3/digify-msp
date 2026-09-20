@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1788671031931",
+    "slug": "hello-demo",
+    "title": "hello demo",
+    "excerpt": "aaaaaaaaaaaa vvvvvvvvvvvvvvvc ccccccccccccccccc",
+    "content": "aaaaaaaaaaaa vvvvvvvvvvvvvvvc ccccccccccccccccc",
+    "author": "aaaaaa",
+    "imageUrl": "/uploads/1788671031891-file_00000000f4987206ac209ca3e432a54b.png",
+    "imageAlt": "logo",
+    "createdAt": "2026-09-06T05:03:51.932Z"
+  },
+  {
+    "id": "1785607550826",
+    "slug": "nnn",
+    "title": "nnn",
+    "excerpt": ",mmm",
+    "content": "hhhh",
+    "author": "jjj",
+    "imageUrl": "/uploads/1785607550722-hero.png",
+    "imageAlt": "Hero image for nnn",
+    "createdAt": "2026-08-01T18:05:50.826Z"
+  },
+  {
+    "id": "1785606954394",
+    "slug": "hello",
+    "title": "hello",
+    "excerpt": "aaa",
+    "content": "addddddddddd",
+    "author": "aaaaa",
+    "createdAt": "2026-08-01T17:55:54.394Z"
+  },
+  {
+    "id": "1",
+    "slug": "welcome-to-the-blog",
+    "title": "Welcome to the blog",
+    "excerpt": "This is the first post. Use the admin page to add more posts.",
+    "content": "This blog is powered by a simple local JSON file and an API route. Add posts from the admin page.",
+    "author": "Admin",
+    "createdAt": "2026-08-01T00:00:00.000Z"
+  }
+]
