@@ -1,95 +1,379 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const pillars = [
+  {
+    number: "01",
+    title: "Agency",
+    subtitle: "Performance Marketing",
+    description:
+      "We help businesses acquire attention, generate qualified leads and turn marketing activity into measurable business outcomes.",
+    icon: "↗",
+  },
+  {
+    number: "02",
+    title: "Academy",
+    subtitle: "Practical AI Marketing",
+    description:
+      "Learn modern digital marketing through practical training, real projects, AI tools and hands-on execution.",
+    icon: "✦",
+  },
+  {
+    number: "03",
+    title: "Consulting",
+    subtitle: "Growth Systems",
+    description:
+      "We connect acquisition, conversion, automation and retention into systems designed around sustainable growth.",
+    icon: "◉",
+  },
+];
+
+const stats = [
+  {
+    number: "10+",
+    label: "Years",
+    description: "Agency experience",
+  },
+  {
+    number: "1,500+",
+    label: "Clients",
+    description: "Businesses served",
+  },
+  {
+    number: "3",
+    label: "Countries",
+    description: "Across our journey",
+  },
+  {
+    number: "3",
+    label: "Pillars",
+    description: "One connected ecosystem",
+  },
+];
+
+const values = [
+  {
+    number: "01",
+    title: "Execution over theory",
+    description:
+      "Ideas become valuable when they are implemented. We focus on practical strategies that can actually be executed.",
+  },
+  {
+    number: "02",
+    title: "Systems over isolated activities",
+    description:
+      "Ads, content, websites and follow-ups should work together instead of operating as disconnected activities.",
+  },
+  {
+    number: "03",
+    title: "AI with business purpose",
+    description:
+      "We use AI to improve speed, automation and decision-making while keeping business outcomes at the centre.",
+  },
+  {
+    number: "04",
+    title: "Growth that can be measured",
+    description:
+      "Marketing should ultimately connect to enquiries, customers, revenue and long-term business growth.",
+  },
+];
 
 export default function AboutPage() {
   return (
-    <>
+    <main className="overflow-hidden bg-[var(--bg)] text-[var(--text)]">
 
-      <section className="hero">
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+      <section className="relative isolate min-h-[720px] border-b border-white/10 pt-32">
 
-        <div className="container">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute -left-40 top-20 -z-10 h-[500px] w-[500px] rounded-full bg-[#8cff00]/10 blur-[140px]" />
 
-          <div className="section-label">
-            ABOUT DIGIFY MSP
+        <div className="pointer-events-none absolute right-[-180px] top-[-100px] -z-10 h-[600px] w-[600px] rounded-full bg-blue-500/10 blur-[160px]" />
+
+        <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
+
+          {/* LEFT */}
+          <div className="max-w-3xl">
+
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#8cff00]/20 bg-[#8cff00]/5 px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-[#8cff00] shadow-[0_0_15px_#8cff00]" />
+
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#8cff00]">
+                About Digify MSP
+              </span>
+            </div>
+
+            <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.05em] sm:text-6xl lg:text-7xl xl:text-[88px]">
+              Built from
+              <br />
+
+              <span className="text-[#8cff00]">
+                real marketing
+              </span>
+
+              <br />
+
+              experience.
+            </h1>
+
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              Digify MSP brings together agency execution,
+              practical marketing education and strategic
+              consulting under one connected growth ecosystem.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-[#8cff00] px-7 py-4 text-sm font-black text-[#03101f] transition duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(140,255,0,0.25)]"
+              >
+                Work With Us →
+              </Link>
+
+              <Link
+                href="/agency"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-7 py-4 text-sm font-bold text-white transition duration-300 hover:border-[#8cff00]/50 hover:bg-white/[0.06]"
+              >
+                Explore Our Work
+              </Link>
+
+            </div>
+
           </div>
 
-          <h1>
-            Built from
-            <span className="gradient-text">
-              {" "}real marketing experience.
-            </span>
-          </h1>
+          {/* RIGHT IMAGE */}
+          <div className="relative">
 
-          <p className="hero-description">
-            Digify MSP brings together agency execution,
-            practical marketing education and strategic
-            consulting under one ecosystem.
-          </p>
+            <div className="absolute -inset-6 rounded-[40px] bg-[#8cff00]/10 blur-3xl" />
+
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#071329] shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+
+              <div className="absolute left-5 top-5 z-10 rounded-full border border-white/10 bg-[#020817]/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#8cff00] backdrop-blur-md">
+                Agency • Academy • Consulting
+              </div>
+
+              <Image
+                src="/hero-img.png"
+                alt="Digify MSP growth strategy"
+                width={900}
+                height={1000}
+                priority
+                className="h-[520px] w-full object-cover object-center sm:h-[600px]"
+              />
+
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-[#020817]/85 p-5 backdrop-blur-xl">
+
+                <div className="flex items-center justify-between gap-4">
+
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8cff00]">
+                      The Digify approach
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-white">
+                      Strategy → Execution → Systems → Growth
+                    </p>
+                  </div>
+
+                  <span className="hidden text-3xl font-black text-[#8cff00] sm:block">
+                    360°
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
-
       </section>
 
 
-      <section className="section section-dark">
+      {/* =====================================================
+          INTRO / STORY
+      ===================================================== */}
+      <section className="relative bg-[#061329] py-24 sm:py-32">
 
-        <div className="container">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
 
-          <div className="two-column">
+          <div className="grid gap-14 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
 
             <div>
+              <p className="text-xs font-black uppercase tracking-[0.25em] text-[#8cff00]">
+                Our Story
+              </p>
 
-              <div className="section-label">
-                OUR STORY
-              </div>
-
-              <h2 className="section-title">
+              <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
                 Agency.
                 <br />
                 Academy.
                 <br />
                 Consulting.
               </h2>
-
             </div>
 
 
-            <div>
+            <div className="max-w-3xl">
 
-              <p className="section-description">
+              <p className="text-xl leading-9 text-slate-200 sm:text-2xl">
                 Digify MSP is structured around three connected
                 pillars. The agency works on business growth,
                 the academy teaches practical marketing and
                 consulting focuses on strategic systems.
               </p>
 
-              <p className="section-description">
-                The goal is to connect knowledge with execution
-                instead of treating marketing as isolated
-                activities.
+              <p className="mt-7 text-lg leading-8 text-slate-400">
+                The goal is simple: connect knowledge with
+                execution instead of treating marketing as a
+                collection of isolated activities.
               </p>
+
+              <div className="mt-10 h-px w-full bg-white/10" />
+
+              <div className="mt-8 flex flex-wrap gap-x-10 gap-y-5">
+
+                <div>
+                  <p className="text-2xl font-black text-white">
+                    Attention
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Get noticed
+                  </p>
+                </div>
+
+                <div className="text-2xl text-[#8cff00]">
+                  →
+                </div>
+
+                <div>
+                  <p className="text-2xl font-black text-white">
+                    Conversion
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Create action
+                  </p>
+                </div>
+
+                <div className="text-2xl text-[#8cff00]">
+                  →
+                </div>
+
+                <div>
+                  <p className="text-2xl font-black text-white">
+                    Growth
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Build systems
+                  </p>
+                </div>
+
+              </div>
 
             </div>
 
           </div>
 
         </div>
-
       </section>
 
 
-      <section className="section">
+      {/* =====================================================
+          THREE PILLARS
+      ===================================================== */}
+      <section className="py-24 sm:py-32">
 
-        <div className="container">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
 
-          <div className="section-heading">
+          <div className="mb-14 max-w-3xl">
 
-            <div className="section-label">
-              EXPERIENCE
-            </div>
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#8cff00]">
+              The Digify Ecosystem
+            </p>
 
-            <h2 className="section-title">
+            <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+              One growth partner.
+              <br />
+
+              <span className="text-slate-500">
+                Multiple growth engines.
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div className="grid gap-5 lg:grid-cols-3">
+
+            {pillars.map((pillar) => (
+              <div
+                key={pillar.number}
+                className="group relative min-h-[340px] overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.025] p-7 transition duration-500 hover:-translate-y-2 hover:border-[#8cff00]/40 hover:bg-white/[0.045]"
+              >
+
+                <div className="absolute right-[-40px] top-[-40px] h-40 w-40 rounded-full bg-[#8cff00]/5 blur-3xl transition duration-500 group-hover:bg-[#8cff00]/15" />
+
+                <div className="relative flex h-full flex-col">
+
+                  <div className="flex items-center justify-between">
+
+                    <span className="text-sm font-black text-[#8cff00]">
+                      {pillar.number}
+                    </span>
+
+                    <span className="text-2xl text-slate-500 transition duration-300 group-hover:text-[#8cff00]">
+                      {pillar.icon}
+                    </span>
+
+                  </div>
+
+                  <div className="mt-auto">
+
+                    <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                      {pillar.subtitle}
+                    </p>
+
+                    <h3 className="text-3xl font-black tracking-tight text-white">
+                      {pillar.title}
+                    </h3>
+
+                    <p className="mt-5 text-base leading-7 text-slate-400">
+                      {pillar.description}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          STATS
+      ===================================================== */}
+      <section className="border-y border-white/10 bg-[#061329] py-20">
+
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+
+          <div className="mb-12">
+
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#8cff00]">
+              Experience
+            </p>
+
+            <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
               Numbers that describe
-              <span className="green-text">
+              <span className="text-[#8cff00]">
                 {" "}the journey.
               </span>
             </h2>
@@ -97,119 +381,254 @@ export default function AboutPage() {
           </div>
 
 
-          <div className="grid-4">
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[24px] border border-white/10 bg-white/10 md:grid-cols-4">
 
-            <div className="card">
-              <div className="stat-number">
-                10+
+            {stats.map((stat) => (
+              <div
+                key={stat.number + stat.label}
+                className="bg-[#061329] p-7 sm:p-9"
+              >
+
+                <div className="text-4xl font-black tracking-tight text-white sm:text-5xl">
+                  {stat.number}
+                </div>
+
+                <div className="mt-3 text-sm font-black uppercase tracking-wider text-[#8cff00]">
+                  {stat.label}
+                </div>
+
+                <p className="mt-2 text-sm text-slate-500">
+                  {stat.description}
+                </p>
+
               </div>
-              <p>
-                Years of agency experience
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          VALUES / HOW WE THINK
+      ===================================================== */}
+      <section className="py-24 sm:py-32">
+
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+
+          <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+
+            <div>
+
+              <p className="text-xs font-black uppercase tracking-[0.25em] text-[#8cff00]">
+                How We Think
               </p>
+
+              <h2 className="mt-5 text-4xl font-black leading-tight tracking-[-0.04em] sm:text-6xl">
+                Don't optimise
+                <br />
+                one channel.
+                <br />
+
+                <span className="text-slate-500">
+                  Optimise the system.
+                </span>
+              </h2>
+
+              <p className="mt-7 max-w-lg text-lg leading-8 text-slate-400">
+                Digify MSP looks at the complete customer
+                journey — from attention and traffic to
+                conversion, follow-up and growth.
+              </p>
+
             </div>
 
-            <div className="card">
-              <div className="stat-number">
-                1,500+
-              </div>
-              <p>
-                Clients served
-              </p>
-            </div>
 
-            <div className="card">
-              <div className="stat-number">
-                3
-              </div>
-              <p>
-                Countries
-              </p>
-            </div>
+            <div className="divide-y divide-white/10 border-y border-white/10">
 
-            <div className="card">
-              <div className="stat-number">
-                3
-              </div>
-              <p>
-                Business pillars
-              </p>
+              {values.map((value) => (
+                <div
+                  key={value.number}
+                  className="group grid gap-5 py-7 sm:grid-cols-[70px_1fr] sm:items-start"
+                >
+
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#8cff00] text-sm font-black text-[#03101f]">
+                    {value.number}
+                  </span>
+
+                  <div>
+
+                    <h3 className="text-xl font-black text-white transition group-hover:text-[#8cff00]">
+                      {value.title}
+                    </h3>
+
+                    <p className="mt-2 max-w-2xl leading-7 text-slate-400">
+                      {value.description}
+                    </p>
+
+                  </div>
+
+                </div>
+              ))}
+
             </div>
 
           </div>
 
         </div>
-
       </section>
 
 
-      <section className="section section-dark">
+      {/* =====================================================
+          FOUNDER
+      ===================================================== */}
+      <section className="bg-[#061329] py-24 sm:py-32">
 
-        <div className="container">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
 
-          <div className="card">
+          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-[#020817]">
 
-            <div className="section-label">
-              FOUNDER
+            <div className="grid lg:grid-cols-[0.7fr_1.3fr]">
+
+              {/* Founder visual */}
+              <div className="relative min-h-[420px] overflow-hidden bg-gradient-to-br from-[#0b1b34] to-[#020817]">
+
+                <div className="absolute left-10 top-10 h-40 w-40 rounded-full bg-[#8cff00]/10 blur-[80px]" />
+
+                <div className="absolute bottom-10 right-10 h-52 w-52 rounded-full bg-blue-500/10 blur-[100px]" />
+
+                <Image
+                  src="/hero-img.png"
+                  alt="Digify MSP founder and growth strategy"
+                  width={800}
+                  height={900}
+                  className="relative z-10 h-full min-h-[420px] w-full object-cover object-center opacity-90"
+                />
+
+                <div className="absolute bottom-6 left-6 right-6 z-20 rounded-2xl border border-white/10 bg-[#020817]/85 p-4 backdrop-blur-xl">
+
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8cff00]">
+                    Digify MSP
+                  </p>
+
+                  <p className="mt-1 text-sm font-bold text-white">
+                    Experience-led marketing systems
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* Founder content */}
+              <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
+
+                <p className="text-xs font-black uppercase tracking-[0.25em] text-[#8cff00]">
+                  Founder
+                </p>
+
+                <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+                  Poorna Pragathi
+                  <br />
+                  Maruthamuthu
+                </h2>
+
+                <p className="mt-3 font-bold text-[#8cff00]">
+                  Founder & CEO — Digify MSP
+                </p>
+
+                <div className="my-8 h-px w-full bg-white/10" />
+
+                <p className="max-w-2xl text-lg leading-8 text-slate-300">
+                  IIM K certified digital marketer with 10+
+                  years of agency experience, bringing
+                  practical frameworks and real-world
+                  marketing experience into the Digify
+                  ecosystem.
+                </p>
+
+                <p className="mt-6 max-w-2xl text-base leading-7 text-slate-500">
+                  The vision behind Digify MSP is to bring
+                  strategy, execution, education and technology
+                  together so businesses can build marketing
+                  systems that actually contribute to growth.
+                </p>
+
+                <div className="mt-9 flex flex-wrap gap-3">
+
+                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-bold text-slate-300">
+                    10+ Years Experience
+                  </span>
+
+                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-bold text-slate-300">
+                    Digital Marketing
+                  </span>
+
+                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-bold text-slate-300">
+                    Growth Strategy
+                  </span>
+
+                </div>
+
+              </div>
+
             </div>
-
-            <h2
-              style={{
-                marginTop: "20px",
-                fontSize: "40px",
-                fontWeight: 900
-              }}
-            >
-              Poorna Pragathi Maruthamuthu
-            </h2>
-
-            <p
-              style={{
-                color: "var(--green)",
-                marginTop: "5px"
-              }}
-            >
-              Founder & CEO — Digify MSP
-            </p>
-
-            <p
-              className="section-description"
-              style={{ maxWidth: "800px" }}
-            >
-              IIM K certified digital marketer with 10+ years
-              of agency experience, bringing practical
-              frameworks and real-world marketing experience
-              into the Digify ecosystem.
-            </p>
 
           </div>
 
         </div>
-
       </section>
 
 
-      <section className="final-cta">
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
+      <section className="relative overflow-hidden py-28 sm:py-36">
 
-        <div className="container final-cta-content">
+        <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8cff00]/10 blur-[140px]" />
 
-          <h2>
+        <div className="mx-auto max-w-4xl px-6 text-center">
+
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-[#8cff00]">
+            Ready to grow?
+          </p>
+
+          <h2 className="mt-6 text-5xl font-black leading-[0.95] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
             Let's build something
-            <span className="green-text">
-              {" "}worth growing.
+            <br />
+
+            <span className="text-[#8cff00]">
+              worth growing.
             </span>
           </h2>
 
-          <Link
-            href="/contact"
-            className="btn btn-primary"
-          >
-            Get in Touch →
-          </Link>
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-slate-400">
+            Tell us where your business is today and let's
+            identify the systems that can take it forward.
+          </p>
+
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-[#8cff00] px-8 py-4 text-sm font-black text-[#03101f] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(140,255,0,0.25)]"
+            >
+              Get in Touch →
+            </Link>
+
+            <Link
+              href="/agency"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-sm font-bold text-white transition duration-300 hover:border-[#8cff00]/40 hover:bg-white/[0.06]"
+            >
+              Explore Digify MSP
+            </Link>
+
+          </div>
 
         </div>
-
       </section>
 
-    </>
+    </main>
   );
 }
