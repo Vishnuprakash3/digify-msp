@@ -78,6 +78,14 @@ const values = [
   },
 ];
 
+const meetupImages = [
+  "https://media.licdn.com/dms/image/v2/D5622AQGVMFpuy0boow/feedshare-shrink_1280/B56Z3DoVMqIkAM-/0/1777103628050?e=1793232000&v=beta&t=cBkhUmyGC6rfmzlTPuB65t0NaVRz0G-4kgcC4BIaf14",
+  "https://media.licdn.com/dms/image/v2/D5622AQGblIazNgvF-w/feedshare-shrink_800/B56Zma2IcyJ0Ag-/0/1759239514602?e=1793232000&v=beta&t=4S5z_v-q6ZF923B3CS0OmrEnIqm0BeRY3YpOqD6SObQ",
+  "https://media.licdn.com/dms/image/v2/D5622AQF2GDFX2NmTkw/feedshare-shrink_800/feedshare-shrink_800/0/1728735303300?e=1793232000&v=beta&t=maJF9v3S4cjnFNA-JNbq3401puPNslv6pxHiSRyS38E",
+  "https://media.licdn.com/dms/image/v2/D5622AQE1VV_LZ03avA/feedshare-shrink_800/B56aCAxxivIIAc-/0/1788866927310?e=1793232000&v=beta&t=owwOmqiOHUGr8mZ4fXWBtIr0hjHbAjFyWb0JaikwYtU",
+  "https://instagram.fblr8-1.fna.fbcdn.net/v/t51.82787-15/601444649_17856785550577629_8101643958565806026_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&ig_cache_key=Mzc4OTc0MzkxNTI0ODM4MDMxMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5oZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=VTWUVrQk_7EQ7kNvwFsPLhY&_nc_oc=Adr-A3WJslmvrO1znNDVW4TANNu6jvFp1AHvV8MHVlN_WWXnt9mD1StwRKZDPDZ4nyI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fblr8-1.fna&_nc_gid=d2FN5iifylZt5S_frvF9iA&_nc_ss=7a22e&oh=00_AQOGkFwwp9KBrs1-xgnRm_Z2JbVcW7AGrF8HJyiHuHopmQ&oe=6ACC472E",
+];
+
 export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-[var(--bg)] text-[var(--text)]">
@@ -409,6 +417,46 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+
+      {/* //meetuo images // */}
+<section className="border-y border-[var(--border)] bg-[var(--bg-secondary)]">
+  <div className="mx-auto w-full max-w-[1400px] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+
+    <div className="max-w-3xl">
+      <div className="text-[10px] font-bold tracking-[0.22em] text-[var(--green)] sm:text-xs">
+        HAPPY MEETUPS
+      </div>
+
+      <h2 className="mt-4 text-3xl font-black tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+        People, conversations
+        <span className="block text-[var(--green)]">
+          and shared experiences.
+        </span>
+      </h2>
+
+      <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--text-secondary)]">
+        Moments from our meetups, conversations and community experiences.
+      </p>
+    </div>
+
+    <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
+      {meetupImages.map((image, index) => (
+        <div
+          key={index}
+          className="group overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--bg-card)]"
+        >
+          <img
+            src={image}
+            alt={`Digify MSP Happy Meetup ${index + 1}`}
+            className="aspect-[4/4] w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* =====================================================
           VALUES / HOW WE THINK
