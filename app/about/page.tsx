@@ -547,7 +547,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-10 right-10 h-52 w-52 rounded-full bg-blue-500/10 blur-[100px]" />
 
                 <Image
-                  src="/hero-img.png"
+                  src="/founder.jpeg"
                   alt="Digify MSP founder and growth strategy"
                   width={800}
                   height={900}
